@@ -18,7 +18,7 @@ body {
     width: 800px;
     display: flex;
     justify-content: space-between;
-    filter: url(#gooye);
+    filter: url(#gooey);
 }
 
 .circle {
@@ -42,12 +42,19 @@ body {
     filter: blur(50px);
 }
 
-.circle.left::before {
-    background: linear-gradient(90deg, #ff0000, #00ffff);
+.left,
+.right::before {
+    background: linear-gradient();
 }
 
+.circle.left,
+.circle.left::before {
+    background: linear-gradient(90deg, #f00, #0ff);
+}
+
+.circle.right,
 .circle.right::before {
-    background: linear-gradient(90deg, #ffeb3b, #da00ff);
+    background: linear-gradient(90deg, #fffeb3, #da00ff);
 }
 
 .circle.left {
