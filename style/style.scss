@@ -18,6 +18,7 @@ body {
     width: 800px;
     display: flex;
     justify-content: space-between;
+    filter: url(#gooye);
 }
 
 .circle {
@@ -39,4 +40,55 @@ body {
     background: #ffffff;
     z-index: 1;
     filter: blur(50px);
+}
+
+.circle.left::before {
+    background: linear-gradient(90deg, #ff0000, #00ffff);
+}
+
+.circle.right::before {
+    background: linear-gradient(90deg, #ffeb3b, #da00ff);
+}
+
+.circle.left {
+    animation: animate1 5s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    30% {
+        transform: translateX(250px) rotate(240deg);
+    }
+    60% {
+        transform: translateX(250px) rotate(480deg);
+    }
+    100% {
+        transform: translateX(0) rotate(720deg);
+    }
+}
+
+.circle.right {
+    animation: animate2 5s linear infinite;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    30% {
+        transform: translateX(-250px) rotate(-240deg);
+    }
+    60% {
+        transform: translateX(-250px) rotate(-480deg);
+    }
+    100% {
+        transform: translateX(0) rotate(-720deg);
+    }
+}
+
+svg {
+    width: 0;
+    height: 0;
 }
